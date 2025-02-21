@@ -233,23 +233,6 @@ input[type="range"]:active::-ms-thumb {
   font-size: 0.75em;
 }
 
-.album-cover {
-    width: 200px; /* กำหนดขนาดของวงกลม */
-    height: 200px; /* กำหนดขนาดของวงกลม */
-    border-radius: 50%; /* ทำให้เป็นรูปวงกลม */
-    overflow: hidden; /* ซ่อนส่วนเกินที่ออกนอกวงกลม */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.album-cover img {
-    width: 100%; /* ให้ภาพขยายเต็มพื้นที่วงกลม */
-    height: 100%; /* ให้ภาพสูงพอๆ กับวงกลม */
-    object-fit: cover; /* ใช้ cover เพื่อให้ภาพไม่เสียสัดส่วน */
-}
-
-
 .bottom-controls {
   margin: 1.75rem auto 0 auto;
   /* 28px */
