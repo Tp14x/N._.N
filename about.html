@@ -47,19 +47,6 @@
             transform: scale(1.1); /* ขยายรูปเมื่อวางเมาส์ */
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* เพิ่มเงารอบรูป */
         }
-
-        /* สไตล์สำหรับตำแหน่งที่รูปจะย้ายไป */
-        .moved-position {
-            position: relative;
-            margin-top: 30px;
-        }
-
-        .me-icon-moved {
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: all 0.5s ease; /* เพิ่มการเคลื่อนไหว */
-        }
     </style>
 </head>
 
@@ -114,11 +101,6 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- ตำแหน่งที่รูปจะย้ายไป -->
-        <section class="moved-position" id="new-location">
-            <img class="me-icon-moved" id="movedImage" src="./img/me-image-2.jpg" alt="Moved image">
         </section>
 
         <section id="operation-system">
