@@ -33,11 +33,19 @@
     <link rel="stylesheet" href="./css/footer.css" type="text/css">
     
     <style>
+        /* เพิ่ม CSS สำหรับการทำให้รูปภาพเป็นสี่เหลี่ยมโค้งมน */
         .me-icon {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
+            border-radius: 15px; /* ทำให้ขอบโค้งมน */
+            width: 150px; /* ขนาดของรูปภาพ (สามารถปรับได้) */
+            height: 150px; /* ความสูงของรูปภาพ */
+            object-fit: cover; /* ให้รูปภาพไม่บิดเบี้ยว */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* ลูกเล่นเมื่อวางเมาส์ */
+        }
+
+        /* เพิ่มลูกเล่นเมื่อวางเมาส์ */
+        .me-icon:hover {
+            transform: scale(1.1); /* ขยายขนาดเมื่อวางเมาส์ */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* เพิ่มเงารอบๆ รูปภาพ */
         }
     </style>
 </head>
