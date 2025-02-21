@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en,th">
 
 <head>
@@ -31,21 +30,35 @@
     <link rel="stylesheet" href="./css/header.css" type="text/css">
     <link rel="stylesheet" href="./css/about.css" type="text/css">
     <link rel="stylesheet" href="./css/footer.css" type="text/css">
-    
+
     <style>
-        /* เพิ่ม CSS สำหรับการทำให้รูปภาพเป็นสี่เหลี่ยมโค้งมน */
+        /* ทำให้ขอบของรูปโค้งมน */
         .me-icon {
             border-radius: 15px; /* ทำให้ขอบโค้งมน */
-            width: 150px; /* ขนาดของรูปภาพ (สามารถปรับได้) */
-            height: 150px; /* ความสูงของรูปภาพ */
-            object-fit: cover; /* ให้รูปภาพไม่บิดเบี้ยว */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* ลูกเล่นเมื่อวางเมาส์ */
+            width: 150px; /* ขนาดของรูปภาพ */
+            height: 150px; /* ความสูงของรูป */
+            object-fit: cover; /* ให้รูปไม่บิดเบี้ยว */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่มลูกเล่น */
+            cursor: pointer;
         }
 
-        /* เพิ่มลูกเล่นเมื่อวางเมาส์ */
+        /* เพิ่มลูกเล่นเมื่อเมาส์วางบนรูป */
         .me-icon:hover {
-            transform: scale(1.1); /* ขยายขนาดเมื่อวางเมาส์ */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* เพิ่มเงารอบๆ รูปภาพ */
+            transform: scale(1.1); /* ขยายรูปเมื่อวางเมาส์ */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* เพิ่มเงารอบรูป */
+        }
+
+        /* สไตล์สำหรับตำแหน่งที่รูปจะย้ายไป */
+        .moved-position {
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .me-icon-moved {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.5s ease; /* เพิ่มการเคลื่อนไหว */
         }
     </style>
 </head>
@@ -61,6 +74,7 @@
             </ul>
         </nav>
     </header>
+
     <main class="main-container about-section">
         <section id="profile">
             <div class="page-title">
@@ -70,7 +84,7 @@
             <p class="section-description"> Hi! I'm Suradet Konsan. I've been studying with computers and technology for most of my life being technical support for friends and family, and Nothing special here, Maybe there will be something special here.</p>
             <div class="profile-container">
                 <div class="me-icon-container">
-                    <img class="me-icon" src="./img/me-image-2.jpg" alt="Icon of myself is a cartoon character in the Tokyo Ghoul anime named Juuzou Suzuya" title="Juuzou Suzuya. Boku wa jibun ga mukatsuku yatsu wa dou natte mo ii desu.">
+                    <img class="me-icon" src="./img/me-image-2.jpg" alt="Icon of myself is a cartoon character in the Tokyo Ghoul anime named Juuzou Suzuya" title="Juuzou Suzuya. Boku wa jibun ga mukatsuku yatsu wa dou natte mo ii desu." onclick="moveImage()">
                 </div>
                 <div class="terminal-container">
                     <div class="terminal-header">
@@ -101,6 +115,12 @@
                 </div>
             </div>
         </section>
+
+        <!-- ตำแหน่งที่รูปจะย้ายไป -->
+        <section class="moved-position" id="new-location">
+            <img class="me-icon-moved" id="movedImage" src="./img/me-image-2.jpg" alt="Moved image">
+        </section>
+
         <section id="operation-system">
             <h3>Operation System</h3>
             <div class="operation-system-container">
@@ -134,6 +154,7 @@
             </div>
         </section>
     </main>
+
     <footer class="footer-container">
         <div class="footer">
             <div class="footer-column">
@@ -155,7 +176,13 @@
             <span class="copyright"><i class="fas fa-copyright"></i> 2025 N._.N</span>
         </div>
     </footer>
-    <script src="./js/main.js"></script>
+    <script>
+        function moveImage() {
+            const movedImage = document.getElementById('movedImage');
+            movedImage.style.top = "50px"; // เปลี่ยนตำแหน่งของรูป
+            movedImage.style.left = "50px"; // เปลี่ยนตำแหน่งของรูป
+        }
+    </script>
 </body>
 
 </html>
